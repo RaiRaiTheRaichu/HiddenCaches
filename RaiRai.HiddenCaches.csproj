@@ -1,0 +1,42 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net472</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="BepInEx.Core" Version="5.4.21" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="Aki.Reflection">
+      <HintPath>references\EFT\Managed\Aki.Reflection.dll</HintPath>
+    </Reference>
+    <Reference Include="Assembly-CSharp">
+      <HintPath>references\EFT\Managed\Assembly-CSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Comfort">
+      <HintPath>references\EFT\Managed\Comfort.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine">
+      <HintPath>references\EFT\Managed\UnityEngine.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.AudioModule">
+      <HintPath>references\EFT\Managed\UnityEngine.AudioModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.CoreModule">
+      <HintPath>references\EFT\Managed\UnityEngine.CoreModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.IMGUIModule">
+      <HintPath>references\EFT\Managed\UnityEngine.IMGUIModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.ParticleSystemModule">
+      <HintPath>references\EFT\Managed\UnityEngine.ParticleSystemModule.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+  <Target Name="CopyCustomContent" AfterTargets="AfterBuild">
+    <Copy SourceFiles="bin\Release\net472\RaiRai.HiddenCaches.dll" DestinationFolder="./build/plugins" />
+  </Target>
+
+</Project>
