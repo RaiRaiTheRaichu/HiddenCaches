@@ -9,14 +9,14 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Reference Include="Aki.Reflection">
-      <HintPath>references\EFT\Managed\Aki.Reflection.dll</HintPath>
-    </Reference>
     <Reference Include="Assembly-CSharp">
       <HintPath>references\EFT\Managed\Assembly-CSharp.dll</HintPath>
     </Reference>
     <Reference Include="Comfort">
       <HintPath>references\EFT\Managed\Comfort.dll</HintPath>
+    </Reference>
+    <Reference Include="spt-reflection">
+      <HintPath>references\BepInEx\spt-reflection.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine">
       <HintPath>references\EFT\Managed\UnityEngine.dll</HintPath>
