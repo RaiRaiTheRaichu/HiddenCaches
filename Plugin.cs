@@ -5,11 +5,10 @@ using BepInEx.Logging;
 using UnityEngine;
 using System.Collections;
 using EFT.Interactive;
-using System.Linq;
 
 namespace RaiRai.HiddenCaches
 {
-    [BepInPlugin("com.rairai.hiddencaches.eft", "HiddenCaches", "1.0.0")]
+    [BepInPlugin("com.rairai.hiddencaches.eft", "HiddenCaches", "1.0.1")]
     public class Plugin : BaseUnityPlugin
     {
         internal static ManualLogSource Log;
@@ -19,22 +18,22 @@ namespace RaiRai.HiddenCaches
         internal static ConfigEntry<Boolean> configLight;
         internal static ConfigEntry<Boolean> configSmoke;
 
-        public Plugin()
+        private void Awake()
         {
-            Plugin.Log = base.Logger;
-            Plugin.Log.LogInfo("Loading plugin!");
+            Log = base.Logger;
+            Log.LogInfo("Loading plugin!");
             try
             {
                 InitConfig();
 
                 new CachePatch().Enable();
-                new RaidEndPatch().Enable();
+                //new RaidEndPatch().Enable();
             }
             catch (Exception ex)
             {
-                Plugin.Log.LogError(ex.ToString());
+                Log.LogError(ex.ToString());
             }
-            Plugin.Log.LogInfo("Loaded plugin!");
+            Log.LogInfo("Loaded plugin!");
         }
 
         private void InitConfig()

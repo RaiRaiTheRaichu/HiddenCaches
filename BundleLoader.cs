@@ -23,7 +23,7 @@ namespace RaiRai.HiddenCaches
         {
             var PATH = "assets/content/location_objects/lootable/prefab/scontainer_crate.bundle";
 
-            var easyAssets = Singleton<PoolManager>.Instance.EasyAssets;
+            var easyAssets = Singleton<PoolManagerClass>.Instance.EasyAssets;
             await easyAssets.Retain(PATH, null, null).LoadingJob;
 
 

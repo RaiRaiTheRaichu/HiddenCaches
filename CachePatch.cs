@@ -1,6 +1,7 @@
 ﻿using SPT.Reflection.Patching;
 using System.Linq;
 using System.Reflection;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 
 
@@ -20,7 +21,13 @@ namespace RaiRai.HiddenCaches
         {
             // scontainer_wood_CAP
             // scontainer_Blue_Barrel_Base_Cap
-            
+
+            // clear old cache if it exists
+            if (hiddenCacheList != null)
+            {
+                hiddenCacheList = null;
+            }
+
             hiddenCacheList = Object.FindObjectsOfType<EFT.Interactive.LootableContainer>().Where( x => 
                     x.name.StartsWith("scontainer_wood_CAP")
                     || x.name.StartsWith("scontainer_Blue_Barrel_Base_Cap"));

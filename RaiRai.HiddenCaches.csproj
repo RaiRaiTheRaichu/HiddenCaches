@@ -7,6 +7,15 @@
   <ItemGroup>
     <PackageReference Include="BepInEx.Core" Version="5.4.21" />
   </ItemGroup>
+  
+  <Target Name="RemoveDirectories" BeforeTargets="BeforeBuild">
+    <RemoveDir
+        Directories="./bin/;./build/" />
+  </Target>
+
+  <Target Name="CopyCustomContent" AfterTargets="AfterBuild">
+    <Copy SourceFiles="bin\$(Configuration)\net472\$(AssemblyName).dll" DestinationFolder="./build/plugins" />
+  </Target>
 
   <ItemGroup>
     <Reference Include="Assembly-CSharp">
@@ -34,9 +43,5 @@
       <HintPath>references\EFT\Managed\UnityEngine.ParticleSystemModule.dll</HintPath>
     </Reference>
   </ItemGroup>
-
-  <Target Name="CopyCustomContent" AfterTargets="AfterBuild">
-    <Copy SourceFiles="bin\Release\net472\RaiRai.HiddenCaches.dll" DestinationFolder="./build/plugins" />
-  </Target>
 
 </Project>
