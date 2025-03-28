@@ -2,6 +2,9 @@
 
   <PropertyGroup>
     <TargetFramework>net472</TargetFramework>
+    <Version>1.2.0</Version>
+    <FileVersion>1.2.0.0</FileVersion>
+    <IncludeSourceRevisionInInformationalVersion>false</IncludeSourceRevisionInInformationalVersion>
   </PropertyGroup>
 
   <ItemGroup>
@@ -9,8 +12,7 @@
   </ItemGroup>
   
   <Target Name="RemoveDirectories" BeforeTargets="BeforeBuild">
-    <RemoveDir
-        Directories="./bin/;./build/" />
+    <RemoveDir Directories="./bin/;./build/" />
   </Target>
 
   <Target Name="CopyCustomContent" AfterTargets="AfterBuild">

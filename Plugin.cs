@@ -8,7 +8,7 @@ using EFT.Interactive;
 
 namespace RaiRai.HiddenCaches
 {
-    [BepInPlugin("com.rairai.hiddencaches.eft", "HiddenCaches", "1.0.1")]
+    [BepInPlugin("com.rairai.hiddencaches.eft", "HiddenCaches", "1.2.0")]
     public class Plugin : BaseUnityPlugin
     {
         internal static ManualLogSource Log;
